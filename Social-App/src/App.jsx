@@ -1,11 +1,11 @@
 
 import './App.css'
-import PostCard from './Components/PostCard';
+import SocialApp from './Components/Social-App/SocialApp';
 
 function App() {
  return (
  <>
-  <PostCard/>
+  <SocialApp />
  </>
  );
 }
