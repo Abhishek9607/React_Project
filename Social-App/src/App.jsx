@@ -1,13 +1,11 @@
 
 import './App.css'
-import Button from '@mui/material/Button';
+import PostCard from './Components/PostCard';
 
 function App() {
  return (
  <>
-  <Button variant="contained" color="success">
-  Success
-</Button>
+  <PostCard/>
  </>
  );
 }
