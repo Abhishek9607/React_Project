@@ -16,7 +16,7 @@ function PostCardLists() {
             const responseObject = response.data;
             setPosts([...responseObject.data]);
         }
-        f
+        f()
         // we will download the content from dummyapi.io
     //     axios.get('https://dummyapi.io/data/v1/post' ,{
     //           headers: {'app-id': '64ae4cbd6f33143ec15e49b0'}
