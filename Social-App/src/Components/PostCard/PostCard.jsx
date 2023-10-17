@@ -12,19 +12,21 @@ import { CardContent, Typography } from '@mui/material';
 
 
 function PostCard({image, content, authorFirstName }) {
+  // console.log(image);
   return (
     <div>
           <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="Abhi">
-            {/* {authorFirstName.substring(0, 1)} */}
+            {authorFirstName}
           </Avatar>
         }
       
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
       />
+      
       {(image.length > 0) ?
         (<CardMedia
           component="img"
