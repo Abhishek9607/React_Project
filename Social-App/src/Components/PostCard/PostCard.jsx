@@ -19,7 +19,7 @@ function PostCard({image, content, authorFirstName }) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="Abhi">
-            {authorFirstName}
+            {authorFirstName?.subString(0, 1)}
           </Avatar>
         }
       
