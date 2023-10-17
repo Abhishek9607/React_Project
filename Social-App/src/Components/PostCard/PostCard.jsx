@@ -6,30 +6,39 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { CardContent, Typography } from '@mui/material';
 
 
 
 
-function PostCard() {
+function PostCard({image, content, authorFirstName }) {
   return (
     <div>
           <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="Abhi">
-            R
+            {/* {authorFirstName.substring(0, 1)} */}
           </Avatar>
         }
       
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
       />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://thumbs.dreamstime.com/b/silhouette-young-woman-meditating-sunset-meditation-doing-yoga-exercise-evening-41157985.jpg"
-        alt="Paella dish"
-      />
+      {(image.length > 0) ?
+        (<CardMedia
+          component="img"
+          height="194"
+          image={image}
+          alt="Paella dish"
+        /> )
+        : null
+      }
+      <CardContent>
+        <Typography>
+          {content}
+        </Typography>
+      </CardContent>
       
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
