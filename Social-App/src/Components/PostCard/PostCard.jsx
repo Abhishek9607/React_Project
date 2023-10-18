@@ -7,11 +7,14 @@ import IconButton from '@mui/material/IconButton';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { CardContent, Typography } from '@mui/material';
+import { useState } from 'react';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
 
 
-function PostCard({image, content, authorFirstName }) {
+function PostCard({image, content, authorFirstName, publishDate }) {
+  const [isLiked, setIsLiked] = useState(false);
   // console.log(image);
   return (
     <div>
@@ -19,12 +22,12 @@ function PostCard({image, content, authorFirstName }) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="Abhi">
-            {authorFirstName?.subString(0, 1)}
+            {authorFirstName.substring(0, 1)}
           </Avatar>
         }
       
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={authorFirstName}
+        subheader={publishDate}
       />
       
       {(image.length > 0) ?
@@ -43,8 +46,13 @@ function PostCard({image, content, authorFirstName }) {
       </CardContent>
       
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+   
+        <IconButton aria-label="add to favorites"  onClick={() => setIsLiked(!isLiked)}>
+          {
+          (isLiked) ? <FavoriteIcon sx={{ color: red[500] }} /> :    <FavoriteBorderIcon />
+          }
+        
+       
         </IconButton>
       
       </CardActions>

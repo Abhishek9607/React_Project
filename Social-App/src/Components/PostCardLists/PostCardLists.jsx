@@ -28,7 +28,8 @@ function PostCardLists() {
                            text={post.text}
                            image={post.image} 
                            content={post.content}  
-                           authorFirstName={post.owner.FirstName}
+                           authorFirstName={post.owner.firstName}
+                           publishDate={post.publishDate}
                         />)
   )
 }

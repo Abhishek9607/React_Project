@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -8,9 +8,11 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 
 export default function CheckboxListSecondary() {
-  const [users, setUsers] = React.useState([1]);
+ 
+  const [users, setUsers] = useState([]);
   useEffect(() => {
       axios.get('https://dummyapi.io/data/v1/user', {
         headers: {'app-id': import.meta.env.VITE_APP_ID}
